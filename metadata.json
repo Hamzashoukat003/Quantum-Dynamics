@@ -1,0 +1,6 @@
+{
+  "name": "Quantum Dynamics Limited",
+  "description": "Corporate website for Quantum Dynamics Limited (QD), Sadiqabad - mechanical and civil contracting, equipment manufacturing, installation and erection across oil & gas, chemical, power, cement, fertilizer, infrastructure and food industries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

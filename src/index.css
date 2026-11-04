@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* QD brand palette, taken from the company logo: red "Q" (#C8363A) and deep blue "D" (#2E0A5F). */
+@theme {
+  --color-qdred-50: #fdf3f3;
+  --color-qdred-100: #fbe4e5;
+  --color-qdred-200: #f6cdce;
+  --color-qdred-300: #eea8aa;
+  --color-qdred-400: #e3777a;
+  --color-qdred-500: #d65053;
+  --color-qdred-600: #c8363a;
+  --color-qdred-700: #a8292d;
+  --color-qdred-800: #8b2528;
+  --color-qdred-900: #742427;
+  --color-qdred-950: #3f0e10;
+
+  --color-qdblue-50: #f4f2fb;
+  --color-qdblue-100: #e8e3f6;
+  --color-qdblue-200: #d2c8ed;
+  --color-qdblue-300: #b2a1de;
+  --color-qdblue-400: #8d73ca;
+  --color-qdblue-500: #6d50b4;
+  --color-qdblue-600: #563996;
+  --color-qdblue-700: #452b7b;
+  --color-qdblue-800: #3a1f6b;
+  --color-qdblue-900: #2e0a5f;
+  --color-qdblue-950: #1b0540;
+
+  --color-qdgrey: #9a9a9a;
+}
+
+@layer base {
+  :root {
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-sans: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom smooth scroll and industrial aesthetic utilities */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #c8363a;
+  color: #ffffff;
+}
+
+/* Industrial blueprint subtle grid pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgba(46, 10, 95, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(46, 10, 95, 0.05) 1px, transparent 1px);
+}
+
+.bg-grid-pattern-dark {
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+/* Red-to-blue brand rule, echoing the two halves of the QD logo */
+.qd-brand-rule {
+  background-image: linear-gradient(to right, #c8363a 0 50%, #2e0a5f 50% 100%);
+}
