@@ -29,8 +29,7 @@ export const COMPANY_INFO = {
   phonePrimary: '0300-8671833',
   phones: [
     { label: 'CEO', tel: '0300-8671833' },
-    { label: 'Director', tel: '0300-6796379' },
-    { label: 'Head of (P&C)', tel: '0300-2980098' },
+    { label: 'Director of Finance', tel: '0300-6796379' },
   ],
   stats: [
     { value: '2 Decades', label: "Founders' experience in installation & erection" },
@@ -63,7 +62,8 @@ export const REGISTRATION = [
 
 export const LEADERSHIP_TEAM: LeadershipMember[] = [
   { name: 'Kaiwan Danish', role: 'Chief Executive Officer', phone: '0300-8671833', email: 'kaiwandanish@gmail.com' },
-  { name: 'Shafiq Aslam', role: 'Director', phone: '0300-6796379', email: 'shafiqaslamsas@gmail.com' },
+  { name: 'Shafiq Aslam', role: 'Director of Finance', phone: '0300-6796379', email: 'shafiqaslamsas@gmail.com' },
+  { name: 'Awais Ali', role: 'Director of Tech/Operations', phone: '0300-2980098', email: 'aavais@outlook.com' },
 ];
 
 export const IMAGES = {
