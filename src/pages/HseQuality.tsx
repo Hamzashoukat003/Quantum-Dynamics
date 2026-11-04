@@ -21,7 +21,7 @@ export const HseQuality: React.FC<HseQualityProps> = ({ onOpenRfq, onOpenProfile
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-heading">QHSE Commitment</h1>
             <p className="text-base text-qdblue-100 leading-relaxed">
-              Every QD project is managed within its defined scope, budget, quality and safety parameters — with a dedicated {ORG_CHART.staff[1]} reporting directly to management.
+              Every QD project is managed within its defined scope, budget, quality and safety parameters — with a dedicated {ORG_CHART.departments[1]} department reporting directly to management.
             </p>
           </div>
         </div>

@@ -21,6 +21,10 @@ interface AboutProps {
 
 const STATEMENT_ICONS = [Compass, Target, Heart];
 
+// Organization chart: outlined boxes joined by connector lines.
+const ORG_BOX = 'rounded-lg border-2 border-qdred-500 bg-qdblue-900/60';
+const ORG_LINE = 'bg-qdred-500';
+
 export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
   return (
     <div className="space-y-16 pb-16">
@@ -156,31 +160,42 @@ export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
           </h2>
         </div>
 
-        <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-10 space-y-6 text-center">
-          <div className="inline-block px-6 py-3 rounded-lg bg-qdred-600 text-white font-bold font-heading">{ORG_CHART.top}</div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="px-6 py-3 rounded-lg bg-qdblue-900 text-white font-bold font-heading">{ORG_CHART.gm}</div>
-            {ORG_CHART.staff.map((s) => (
-              <div key={s} className="px-4 py-2 rounded-lg border-2 border-dashed border-qdblue-200 text-qdblue-900 text-sm font-semibold">
-                {s}
+        <div className="bg-qdblue-950 rounded-xl px-4 py-8 sm:p-10 flex flex-col items-center text-center">
+          <div className={`${ORG_BOX} px-6 py-3 font-bold font-heading text-qdred-300`}>{ORG_CHART.top}</div>
+          <div className={`${ORG_LINE} w-0.5 h-7`} />
+          <div className={`${ORG_BOX} px-6 py-3 font-bold font-heading text-white`}>{ORG_CHART.second}</div>
+          <div className={`${ORG_LINE} w-0.5 h-7`} />
+
+          {/* Managers reporting to the Vice President */}
+          <div className="relative grid w-full max-w-3xl grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6">
+            {/* From the first column's centre to the last's: each column is (100% − 2 × gap) / 3 wide */}
+            <div
+              className={`${ORG_LINE} hidden sm:block absolute top-0 h-0.5`}
+              style={{ left: 'calc((100% - 3rem) / 6)', right: 'calc((100% - 3rem) / 6)' }}
+            />
+            {ORG_CHART.managers.map((m) => (
+              <div key={m} className="flex flex-col items-center">
+                <div className={`${ORG_LINE} hidden sm:block w-0.5 h-7`} />
+                <div className={`${ORG_BOX} w-full max-w-[220px] min-h-[76px] px-4 py-3 flex items-center justify-center font-bold font-heading text-qdred-300`}>
+                  {m}
+                </div>
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 pt-4 border-t border-slate-100">
-            {ORG_CHART.departments.map((d) => (
-              <div
-                key={d}
-                className="px-3 py-3 rounded-lg bg-qdblue-50 border border-qdblue-100 text-xs font-semibold text-qdblue-900 flex items-center justify-center"
-              >
+
+          {/* Departments under the Operations Manager (the middle column) */}
+          <div className={`${ORG_LINE} hidden sm:block w-0.5 h-8`} />
+          <div className={`${ORG_LINE} hidden sm:block w-full max-w-4xl h-0.5`} />
+          {/* Stacked on phones, so name the parent instead of drawing a line from the last box */}
+          <p className="sm:hidden mt-8 text-xs font-bold uppercase tracking-wider text-qdred-300">
+            {ORG_CHART.departmentsUnder} — Departments
+          </p>
+          <div className="mt-4 sm:mt-8 flex flex-wrap justify-center gap-x-5 gap-y-5 max-w-6xl">
+            {ORG_CHART.departments.map((d, i) => (
+              <div key={d} className={`${ORG_BOX} px-5 py-3 text-sm ${i % 2 === 0 ? 'text-qdred-300' : 'text-white'}`}>
                 {d}
               </div>
             ))}
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="w-px h-6 bg-qdblue-200" />
-            <div className="px-6 py-3 rounded-lg bg-qdred-50 border border-qdred-100 text-sm font-semibold text-qdred-800">
-              {ORG_CHART.under.role}
-            </div>
           </div>
         </div>
       </section>

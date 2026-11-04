@@ -253,20 +253,24 @@ export const INDUSTRIES: IndustryItem[] = [
   },
 ];
 
+// Reporting lines: CEO & President → Vice President → the three managers; the departments sit under the Operations Manager.
 export const ORG_CHART = {
-  top: 'CEO',
-  gm: 'General Manager',
-  staff: ['Advisor', 'QHSE Manager'],
+  top: 'CEO & President',
+  second: 'Vice President',
+  managers: ['Executive Secretary', 'Operations Manager', 'Commercial & Marketing'],
+  departmentsUnder: 'Operations Manager',
   departments: [
-    'Maintenance Manager',
-    'Operations Manager',
-    'Workshop Superintendent',
-    'Project Manager',
-    'Head of IT & Stores',
-    'Finance & Admin Manager',
-    'Commercial & Business Development Manager',
+    'Logistics',
+    'HSE & Security',
+    'Contracting & Procurement',
+    'HR & Admin',
+    'Legal',
+    'Investment',
+    'Finance & Accounting',
+    'Strategic Planning',
+    'IT',
+    'Project Management',
   ],
-  under: { parent: 'Workshop Superintendent', role: 'Project Engineer' },
 };
 
 export const CORE_VALUES = ['Honesty', 'Integrity', 'Courage', 'Respect and dignity', 'Prosperity for stakeholders, including employees'];
