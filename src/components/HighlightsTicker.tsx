@@ -28,7 +28,7 @@ export const HighlightsTicker: React.FC<{ className?: string }> = ({ className =
 
   return (
     <div
-      className={`relative h-5 overflow-hidden ${className}`}
+      className={`relative h-7 -my-1 overflow-hidden ${className}`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -36,11 +36,13 @@ export const HighlightsTicker: React.FC<{ className?: string }> = ({ className =
         <span
           key={text}
           aria-hidden={i !== index}
-          className={`qd-ticker-item absolute inset-0 flex items-center justify-center gap-1.5 whitespace-nowrap ${
+          className={`qd-ticker-item absolute inset-0 flex items-center justify-center gap-2 whitespace-nowrap ${
             i === index ? 'is-active' : i === prev ? 'is-prev' : ''
           }`}
         >
-          <Icon className="w-3.5 h-3.5 text-qdred-400 shrink-0" />
+          <span className="qd-icon-badge" style={{ animationDelay: '1.2s' }}>
+            <Icon />
+          </span>
           <span className="text-white font-medium">{text}</span>
         </span>
       ))}

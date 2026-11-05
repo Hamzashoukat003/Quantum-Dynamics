@@ -3,7 +3,14 @@ import { PageId } from '../types';
 import { COMPANY_INFO, telHref } from '../data/companyData';
 import { Logo } from './Logo';
 import { HighlightsTicker } from './HighlightsTicker';
-import { Phone, Mail, BookOpen, Menu, X, ArrowRight, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Phone, Mail, BookOpen, Menu, X, ArrowRight, ShieldCheck, ChevronRight, Globe, type LucideIcon } from 'lucide-react';
+
+// Top-bar icon in a glowing round badge; the delay staggers the glow so it travels along the bar.
+const IconBadge: React.FC<{ icon: LucideIcon; delay?: number }> = ({ icon: Icon, delay = 0 }) => (
+  <span className="qd-icon-badge" style={{ animationDelay: `${delay}s` }}>
+    <Icon />
+  </span>
+);
 
 interface HeaderProps {
   currentPage: PageId;
@@ -42,31 +49,31 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="hidden lg:block bg-qdblue-900 text-qdblue-100 text-xs py-1.5 px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5">
-              <span className="text-qdred-300 font-semibold uppercase tracking-wider text-[11px]">Web:</span>
+            <span className="qd-icon-link flex items-center gap-2">
+              <IconBadge icon={Globe} />
               <span className="text-white font-mono">{COMPANY_INFO.domain}</span>
             </span>
             <span aria-hidden="true" className="text-qdblue-600">|</span>
             <a
               href={telHref(COMPANY_INFO.phonePrimary)}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="qd-icon-link flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-qdred-400" />
+              <IconBadge icon={Phone} delay={0.4} />
               <span>{COMPANY_INFO.phonePrimary}</span>
             </a>
             <span aria-hidden="true" className="text-qdblue-600">|</span>
             <a
               href={`mailto:${COMPANY_INFO.emailGeneral}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="qd-icon-link flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Mail className="w-3.5 h-3.5 text-qdred-400" />
+              <IconBadge icon={Mail} delay={0.8} />
               <span>{COMPANY_INFO.emailGeneral}</span>
             </a>
           </div>
           <HighlightsTicker className="hidden xl:block flex-1 mx-6" />
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1 text-qdblue-200">
-              <ShieldCheck className="w-3.5 h-3.5 text-qdred-400" />
+            <span className="qd-icon-link flex items-center gap-2 text-qdblue-200">
+              <IconBadge icon={ShieldCheck} delay={1.6} />
               <span>PEC Registration No. Mech/53430</span>
             </span>
             <button

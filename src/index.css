@@ -176,6 +176,37 @@ html {
   }
 }
 
+/* Top-bar icon badges: a small red gradient disc with a white icon, a glow that pulses out from it (staggered per
+   badge, so it travels along the bar), and a quick pop when the link is hovered. */
+@keyframes qd-badge-glow {
+  0%, 60%, 100% { box-shadow: 0 0 0 0 rgba(227, 119, 122, 0), 0 0 6px rgba(200, 54, 58, 0.35); }
+  20% { box-shadow: 0 0 0 4px rgba(227, 119, 122, 0.35), 0 0 12px rgba(200, 54, 58, 0.7); }
+}
+
+.qd-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #e3777a 0%, #c8363a 55%, #8b2528 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: qd-badge-glow 2.4s ease-out infinite;
+  transition: transform 0.2s ease;
+}
+
+.qd-icon-badge svg {
+  width: 11px;
+  height: 11px;
+}
+
+.qd-icon-link:hover .qd-icon-badge {
+  transform: scale(1.15) rotate(-8deg);
+}
+
 /* Red-to-blue brand rule, echoing the two halves of the QD logo */
 .qd-brand-rule {
   background-image: linear-gradient(to right, #c8363a 0 50%, #2e0a5f 50% 100%);

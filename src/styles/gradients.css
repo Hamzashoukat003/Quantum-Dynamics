@@ -1,0 +1,103 @@
+/* Gradient experiment for the dark purple areas.
+   Everything here is scoped to <html data-qd-gradient="a|b|c">, which main.tsx sets from the ?gradient= URL
+   parameter (default "b"; ?gradient=off shows the original flat design). Delete this file and its import in
+   main.tsx to revert completely. No component markup depends on it. */
+
+/* Palettes: four stops from darkest to lightest and back, plus a soft glow colour for the highlight. */
+html[data-qd-gradient='a'] {
+  /* A - Deep purple */
+  --qd-g1: #210b45;
+  --qd-g2: #351064;
+  --qd-g3: #4b1878;
+  --qd-g4: #2a0d52;
+  --qd-glow: rgba(141, 115, 202, 0.28);
+}
+
+html[data-qd-gradient='b'] {
+  /* B - Purple + midnight navy */
+  --qd-g1: #18072f;
+  --qd-g2: #24104a;
+  --qd-g3: #35175c;
+  --qd-g4: #17102d;
+  --qd-glow: rgba(109, 80, 180, 0.3);
+}
+
+html[data-qd-gradient='c'] {
+  /* C - Premium purple + magenta */
+  --qd-g1: #1b0738;
+  --qd-g2: #35105c;
+  --qd-g3: #5a1c75;
+  --qd-g4: #2b104c;
+  --qd-glow: rgba(176, 64, 150, 0.22);
+}
+
+/* Large dark sections: the hero, every page header and the footer. A diagonal base, a soft glow top-right and a faint
+   brand-red warmth bottom-left, so tall mobile sections change tone from top to bottom instead of one flat shade. */
+html[data-qd-gradient] section.bg-qdblue-950,
+html[data-qd-gradient] footer.bg-qdblue-950 {
+  background:
+    radial-gradient(ellipse 90% 55% at 85% 0%, var(--qd-glow), transparent 70%),
+    radial-gradient(ellipse 70% 45% at 0% 100%, rgba(200, 54, 58, 0.09), transparent 70%),
+    linear-gradient(165deg, var(--qd-g1) 0%, var(--qd-g2) 45%, var(--qd-g3) 80%, var(--qd-g4) 100%);
+}
+
+/* The footer starts from the lighter tone and settles into the darkest one at the copyright line. */
+html[data-qd-gradient] footer.bg-qdblue-950 {
+  background:
+    radial-gradient(ellipse 80% 35% at 50% 0%, var(--qd-glow), transparent 70%),
+    linear-gradient(180deg, var(--qd-g2) 0%, var(--qd-g1) 55%, #0f0520 100%);
+}
+
+/* Mid-page dark bands (Business Sectors, QHSE lifecycle): lighter at the centre, darker at the edges. */
+html[data-qd-gradient] section.bg-qdblue-900 {
+  background:
+    radial-gradient(ellipse 75% 60% at 50% 0%, var(--qd-glow), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(200, 54, 58, 0.07), transparent 70%),
+    linear-gradient(180deg, var(--qd-g2) 0%, var(--qd-g3) 55%, var(--qd-g1) 100%);
+}
+
+/* Home hero metrics strip: see-through, so the hero gradient carries on behind the numbers. */
+html[data-qd-gradient] section > div.bg-qdblue-900.border-t {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03)),
+    color-mix(in srgb, var(--qd-g1) 65%, transparent);
+  border-top-color: rgba(178, 161, 222, 0.18);
+}
+
+/* Dark cards on dark bands (sector cards, lifecycle steps, service specs): a translucent body with a soft top-left
+   highlight and a thin red-to-violet gradient edge. The edge brightens on hover in place of the old border colour. */
+html[data-qd-gradient] .bg-qdblue-950\/70,
+html[data-qd-gradient] .bg-qdblue-950\/80,
+html[data-qd-gradient] div.bg-qdblue-950.rounded-lg {
+  --qd-edge: linear-gradient(140deg, rgba(227, 119, 122, 0.4), rgba(141, 115, 202, 0.2) 45%, rgba(255, 255, 255, 0.05));
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 55%) padding-box,
+    linear-gradient(color-mix(in srgb, var(--qd-g1) 60%, transparent), color-mix(in srgb, var(--qd-g1) 60%, transparent)) padding-box,
+    var(--qd-edge) border-box;
+  border-color: transparent;
+  transition: box-shadow 0.2s ease;
+}
+
+html[data-qd-gradient] .bg-qdblue-950\/70:hover {
+  --qd-edge: linear-gradient(140deg, rgba(227, 119, 122, 0.85), rgba(200, 54, 58, 0.4) 50%, rgba(141, 115, 202, 0.25));
+  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark rounded panels and CTA banners inside light pages. */
+html[data-qd-gradient] div.bg-qdblue-900.rounded-xl,
+html[data-qd-gradient] footer .from-qdblue-900 {
+  background:
+    radial-gradient(ellipse 70% 80% at 100% 0%, var(--qd-glow), transparent 65%),
+    linear-gradient(135deg, var(--qd-g2) 0%, var(--qd-g3) 55%, var(--qd-g4) 100%);
+}
+
+html[data-qd-gradient] footer .from-qdblue-900 {
+  border-color: rgba(178, 161, 222, 0.2);
+}
+
+/* Light safety strip: a barely-there lavender wash and a hint of brand red, so it sits with the dark bands around it. */
+html[data-qd-gradient] div.bg-qdblue-50.rounded-xl {
+  background:
+    radial-gradient(ellipse 70% 80% at 100% 0%, rgba(200, 54, 58, 0.06), transparent 60%),
+    linear-gradient(135deg, #f4f2fb 0%, #ffffff 55%, #eee9f8 100%);
+}
