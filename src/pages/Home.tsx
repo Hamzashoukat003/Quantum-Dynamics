@@ -158,7 +158,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenRfq, onOpenProfile
           </div>
           <div className="lg:col-span-5">
             <div className="rounded-xl overflow-hidden border border-slate-200 shadow-lg aspect-4/3">
-              <img src={IMAGES.siteTeam} alt="Construction team on site" className="w-full h-full object-cover" />
+              <img src={IMAGES.homeIntro} alt="Industrial processing plant at dusk" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

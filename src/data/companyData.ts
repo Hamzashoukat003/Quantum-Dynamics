@@ -10,7 +10,7 @@ import scaffoldCrewImg from '../assets/images/scaffold-crew.jpg';
 import powerLinesImg from '../assets/images/power-lines.jpg';
 import processPipingImg from '../assets/images/process-piping.jpg';
 import hseSiteImg from '../assets/images/hse-site-team.jpg';
-import siteTeamImg from '../assets/images/site-team.jpg';
+import homeIntroImg from '../assets/images/home-intro-plant.jpg';
 import industrialPortImg from '../assets/images/industrial-port.jpg';
 import earthworksImg from '../assets/images/earthworks.jpg';
 import towerCranesImg from '../assets/images/tower-cranes.jpg';
@@ -79,7 +79,7 @@ export const IMAGES = {
   powerLines: powerLinesImg,
   processPiping: processPipingImg,
   hseSite: hseSiteImg,
-  siteTeam: siteTeamImg,
+  homeIntro: homeIntroImg,
   industrialPort: industrialPortImg,
   earthworks: earthworksImg,
   towerCranes: towerCranesImg,
