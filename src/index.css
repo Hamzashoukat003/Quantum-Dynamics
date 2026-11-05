@@ -96,6 +96,86 @@ html {
   }
 }
 
+/* "Profile" button in the top bar: a pulsing glow, a light sweep across the button, a short wiggle now and then,
+   and a book icon that tilts like a turning page. */
+@keyframes qd-glow {
+  0% { box-shadow: 0 0 0 0 rgba(200, 54, 58, 0.6); }
+  70%, 100% { box-shadow: 0 0 0 7px rgba(200, 54, 58, 0); }
+}
+
+@keyframes qd-shine {
+  0%, 55% { transform: translateX(-130%); }
+  100% { transform: translateX(130%); }
+}
+
+@keyframes qd-wiggle {
+  0%, 86%, 100% { transform: rotate(0); }
+  89% { transform: rotate(-4deg); }
+  92% { transform: rotate(4deg); }
+  95% { transform: rotate(-2deg); }
+  98% { transform: rotate(1deg); }
+}
+
+@keyframes qd-page-tilt {
+  0%, 100% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(-10deg) scale(1.12); }
+}
+
+.qd-profile-cta {
+  position: relative;
+  overflow: hidden;
+  animation: qd-glow 2.4s ease-out infinite, qd-wiggle 5s ease-in-out infinite;
+}
+
+.qd-profile-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+  transform: translateX(-130%);
+  animation: qd-shine 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.qd-profile-cta svg {
+  animation: qd-page-tilt 1.8s ease-in-out infinite;
+}
+
+/* Reduced-motion visitors keep the glow and the light sweep; the button and icon stop moving. */
+@media (prefers-reduced-motion: reduce) {
+  .qd-profile-cta {
+    animation: qd-glow 2.4s ease-out infinite;
+  }
+
+  .qd-profile-cta svg {
+    animation: none;
+  }
+}
+
+/* Top-bar highlights ticker: lines wait below, the active line sits in place, the previous one leaves upward. */
+.qd-ticker-item {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.qd-ticker-item.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.qd-ticker-item.is-prev {
+  transform: translateY(-100%);
+}
+
+/* Reduced motion: the lines cross-fade in place instead of sliding. */
+@media (prefers-reduced-motion: reduce) {
+  .qd-ticker-item,
+  .qd-ticker-item.is-prev {
+    transform: none;
+  }
+}
+
 /* Red-to-blue brand rule, echoing the two halves of the QD logo */
 .qd-brand-rule {
   background-image: linear-gradient(to right, #c8363a 0 50%, #2e0a5f 50% 100%);

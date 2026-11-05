@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { PageId } from '../types';
 import { COMPANY_INFO, telHref } from '../data/companyData';
 import { Logo } from './Logo';
-import { Phone, Mail, FileDown, Menu, X, ArrowRight, ShieldCheck, ChevronRight } from 'lucide-react';
+import { HighlightsTicker } from './HighlightsTicker';
+import { Phone, Mail, BookOpen, Menu, X, ArrowRight, ShieldCheck, ChevronRight } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: PageId;
@@ -62,6 +63,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span>{COMPANY_INFO.emailGeneral}</span>
             </a>
           </div>
+          <HighlightsTicker className="hidden xl:block flex-1 mx-6" />
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1 text-qdblue-200">
               <ShieldCheck className="w-3.5 h-3.5 text-qdred-400" />
@@ -69,10 +71,10 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
             <button
               onClick={onOpenProfile}
-              className="flex items-center gap-1 text-qdred-300 hover:text-white font-medium transition-colors"
+              className="qd-profile-cta flex items-center gap-1.5 rounded-full bg-qdred-600 px-3 py-1 font-semibold text-white hover:bg-qdred-500 transition-colors"
             >
-              <FileDown className="w-3.5 h-3.5" />
-              <span>Company Profile</span>
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Profile</span>
             </button>
           </div>
         </div>
@@ -180,8 +182,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="w-full py-2 px-4 text-xs font-medium text-qdblue-900 bg-qdblue-50 rounded-md hover:bg-qdblue-100 transition-colors flex items-center justify-center gap-2"
             >
-              <FileDown className="w-4 h-4 text-qdred-600" />
-              <span>Company Profile</span>
+              <BookOpen className="w-4 h-4 text-qdred-600" />
+              <span>Profile</span>
             </button>
 
             <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1">
