@@ -72,6 +72,30 @@ html {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
 }
 
+/* Client slider: one row of logos that slides right to left. The track holds two identical copies and moves by
+   exactly one copy's width, so the loop is seamless. */
+@keyframes qd-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.qd-slider-track {
+  display: flex;
+  width: max-content;
+  animation: qd-slide 45s linear infinite;
+}
+
+.qd-slider:hover .qd-slider-track {
+  animation-play-state: paused;
+}
+
+/* Visitors who ask for less motion (e.g. Windows "Animation effects" off) get a much slower slide; hover still pauses it. */
+@media (prefers-reduced-motion: reduce) {
+  .qd-slider-track {
+    animation-duration: 120s;
+  }
+}
+
 /* Red-to-blue brand rule, echoing the two halves of the QD logo */
 .qd-brand-rule {
   background-image: linear-gradient(to right, #c8363a 0 50%, #2e0a5f 50% 100%);

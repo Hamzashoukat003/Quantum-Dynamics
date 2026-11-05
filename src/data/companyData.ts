@@ -14,6 +14,17 @@ import homeIntroImg from '../assets/images/home-intro-plant.jpg';
 import industrialPortImg from '../assets/images/industrial-port.jpg';
 import earthworksImg from '../assets/images/earthworks.jpg';
 import towerCranesImg from '../assets/images/tower-cranes.jpg';
+import ffcLogo from '../assets/logos/ffc.svg';
+import doosanLogo from '../assets/logos/doosan.png';
+import engroLogo from '../assets/logos/engro.png';
+import bhpLogo from '../assets/logos/bhp.svg';
+import omvLogo from '../assets/logos/omv.svg';
+import polLogo from '../assets/logos/pol.png';
+import arlLogo from '../assets/logos/arl.png';
+import parcoLogo from '../assets/logos/parco.png';
+import dgCementLogo from '../assets/logos/dg-cement.png';
+import faujiCementLogo from '../assets/logos/fauji-cement.png';
+import hmcLogo from '../assets/logos/hmc.png';
 import maintenanceServiceImg from '../assets/images/service_industrial_maintenance.jpg';
 import fabricationServiceImg from '../assets/images/service_fabrication_erection.jpg';
 
@@ -332,6 +343,28 @@ export const EXPERIENCE: ExperienceItem[] = [
   { title: 'PAP Plant', location: 'Near Fateh Jang', sector: 'infrastructure' },
   { title: 'Paste Plant', location: 'Islamabad', sector: 'infrastructure' },
   { title: 'Berini', location: '—', sector: 'infrastructure' },
+];
+
+// Clients shown in the sliding "Where Our People Have Worked" strip. An entry with no logo shows its name until its logo is added.
+export const CLIENTS: { name: string; logo?: string }[] = [
+  { name: 'FFCL', logo: ffcLogo },
+  { name: 'FFBL' },
+  { name: 'FPCDL' },
+  { name: 'Doosan', logo: doosanLogo },
+  { name: 'Engro', logo: engroLogo },
+  { name: 'BHP', logo: bhpLogo },
+  { name: 'OMV Pakistan', logo: omvLogo },
+  { name: 'Pakistan Oilfields Ltd.', logo: polLogo },
+  { name: 'Attock Oil Refinery', logo: arlLogo },
+  { name: 'Pak-Arab Refinery', logo: parcoLogo },
+  { name: 'ICI Pakistan' },
+  { name: 'Dewan Salman' },
+  { name: 'D.G. Cement', logo: dgCementLogo },
+  { name: 'Fauji Cement', logo: faujiCementLogo },
+  { name: 'Chakwal Cement' },
+  { name: 'Heavy Mechanical Complex', logo: hmcLogo },
+  { name: 'Frontier Works Organization' },
+  { name: 'National Development Complex' },
 ];
 
 export const ORGANISATIONS = [

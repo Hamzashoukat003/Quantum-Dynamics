@@ -22,7 +22,7 @@ interface AboutProps {
 const STATEMENT_ICONS = [Compass, Target, Heart];
 
 // Organization chart: outlined boxes joined by connector lines.
-const ORG_BOX = 'rounded-lg border-2 border-qdred-500 bg-qdblue-900/60';
+const ORG_BOX = 'rounded-lg border-2 border-qdred-500 bg-white shadow-sm';
 const ORG_LINE = 'bg-qdred-500';
 
 export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
@@ -160,10 +160,10 @@ export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
           </h2>
         </div>
 
-        <div className="bg-qdblue-950 rounded-xl px-4 py-8 sm:p-10 flex flex-col items-center text-center">
-          <div className={`${ORG_BOX} px-6 py-3 font-bold font-heading text-qdred-300`}>{ORG_CHART.top}</div>
+        <div className="bg-white border border-slate-200 rounded-xl px-4 py-8 sm:p-10 flex flex-col items-center text-center">
+          <div className={`${ORG_BOX} px-6 py-3 font-extrabold font-heading text-qdred-600`}>{ORG_CHART.top}</div>
           <div className={`${ORG_LINE} w-0.5 h-7`} />
-          <div className={`${ORG_BOX} px-6 py-3 font-bold font-heading text-white`}>{ORG_CHART.second}</div>
+          <div className={`${ORG_BOX} px-6 py-3 font-extrabold font-heading text-qdblue-900`}>{ORG_CHART.second}</div>
           <div className={`${ORG_LINE} w-0.5 h-7`} />
 
           {/* Managers reporting to the Vice President */}
@@ -176,7 +176,7 @@ export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
             {ORG_CHART.managers.map((m) => (
               <div key={m} className="flex flex-col items-center">
                 <div className={`${ORG_LINE} hidden sm:block w-0.5 h-7`} />
-                <div className={`${ORG_BOX} w-full max-w-[220px] min-h-[76px] px-4 py-3 flex items-center justify-center font-bold font-heading text-qdred-300`}>
+                <div className={`${ORG_BOX} w-full max-w-[220px] min-h-[76px] px-4 py-3 flex items-center justify-center font-extrabold font-heading text-qdred-600`}>
                   {m}
                 </div>
               </div>
@@ -187,12 +187,12 @@ export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
           <div className={`${ORG_LINE} hidden sm:block w-0.5 h-8`} />
           <div className={`${ORG_LINE} hidden sm:block w-full max-w-4xl h-0.5`} />
           {/* Stacked on phones, so name the parent instead of drawing a line from the last box */}
-          <p className="sm:hidden mt-8 text-xs font-bold uppercase tracking-wider text-qdred-300">
+          <p className="sm:hidden mt-8 text-xs font-bold uppercase tracking-wider text-qdred-600">
             {ORG_CHART.departmentsUnder} — Departments
           </p>
           <div className="mt-4 sm:mt-8 flex flex-wrap justify-center gap-x-5 gap-y-5 max-w-6xl">
             {ORG_CHART.departments.map((d, i) => (
-              <div key={d} className={`${ORG_BOX} px-5 py-3 text-sm ${i % 2 === 0 ? 'text-qdred-300' : 'text-white'}`}>
+              <div key={d} className={`${ORG_BOX} px-5 py-3 text-sm font-bold ${i % 2 === 0 ? 'text-qdred-600' : 'text-qdblue-900'}`}>
                 {d}
               </div>
             ))}

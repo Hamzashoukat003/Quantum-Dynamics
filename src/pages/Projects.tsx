@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ExperienceSector, PageId } from '../types';
-import { EXPERIENCE, ORGANISATIONS, PROJECT_MANAGEMENT, SECTOR_LABELS } from '../data/companyData';
+import { CLIENTS, EXPERIENCE, PROJECT_MANAGEMENT, SECTOR_LABELS } from '../data/companyData';
 import { Search, MapPin, ArrowRight } from 'lucide-react';
 
 interface ProjectsProps {
@@ -129,12 +129,22 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenRfq, onOpenProfile }) 
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {ORGANISATIONS.map((org) => (
-              <span key={org} className="px-3 py-1.5 rounded border border-qdblue-700 bg-qdblue-950 text-xs font-semibold text-qdblue-100">
-                {org}
-              </span>
-            ))}
+          <div className="qd-slider overflow-hidden rounded-lg bg-white py-5">
+            <div className="qd-slider-track">
+              {[0, 1].map((copy) => (
+                <ul key={copy} className="flex shrink-0 items-center gap-10 pr-10 sm:gap-14 sm:pr-14" aria-hidden={copy === 1}>
+                  {CLIENTS.map((c) => (
+                    <li key={c.name} className="flex h-10 shrink-0 items-center sm:h-14">
+                      {c.logo ? (
+                        <img src={c.logo} alt={copy === 0 ? c.name : ''} title={c.name} className="h-full w-auto max-w-[180px] object-contain sm:max-w-[220px]" />
+                      ) : (
+                        <span className="whitespace-nowrap text-sm font-bold text-qdblue-900 sm:text-base">{c.name}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
           </div>
         </div>
       </section>
