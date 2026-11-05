@@ -50,7 +50,7 @@ export const HseQuality: React.FC<HseQualityProps> = ({ onOpenRfq, onOpenProfile
 
             <div className="lg:col-span-5">
               <div className="rounded-xl overflow-hidden border border-slate-200 aspect-4/3">
-                <img src={IMAGES.hardHat} alt="Safety helmet on a construction site" className="w-full h-full object-cover" />
+                <img src={IMAGES.hseSite} alt="QD team in red safety coveralls and white helmets at an industrial plant" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

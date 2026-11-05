@@ -9,11 +9,13 @@ import weldingImg from '../assets/images/welding.jpg';
 import scaffoldCrewImg from '../assets/images/scaffold-crew.jpg';
 import powerLinesImg from '../assets/images/power-lines.jpg';
 import processPipingImg from '../assets/images/process-piping.jpg';
-import hardHatImg from '../assets/images/hard-hat.jpg';
+import hseSiteImg from '../assets/images/hse-site-team.jpg';
 import siteTeamImg from '../assets/images/site-team.jpg';
 import industrialPortImg from '../assets/images/industrial-port.jpg';
 import earthworksImg from '../assets/images/earthworks.jpg';
 import towerCranesImg from '../assets/images/tower-cranes.jpg';
+import maintenanceServiceImg from '../assets/images/service_industrial_maintenance.jpg';
+import fabricationServiceImg from '../assets/images/service_fabrication_erection.jpg';
 
 // The flipbook company profile is copied into public/profile by "npm run sync:profile".
 export const PROFILE_BOOK = '/profile/index.html';
@@ -76,11 +78,13 @@ export const IMAGES = {
   scaffoldCrew: scaffoldCrewImg,
   powerLines: powerLinesImg,
   processPiping: processPipingImg,
-  hardHat: hardHatImg,
+  hseSite: hseSiteImg,
   siteTeam: siteTeamImg,
   industrialPort: industrialPortImg,
   earthworks: earthworksImg,
   towerCranes: towerCranesImg,
+  industrialMaintenance: maintenanceServiceImg,
+  fabricationErection: fabricationServiceImg,
 };
 
 export const INTRO = {
@@ -104,92 +108,46 @@ export const INTRO = {
     'QD enjoys good relations and cooperation with project owners, the result of excellent coordination in every aspect — from civil works and equipment configuration to realising the best return on project investment.',
 };
 
+// Homepage "Brief Introduction": positions QD as an engineering and EPC company, not only a builder.
+export const BRIEF_INTRO = {
+  heading: 'An Engineering & Manufacturing Company with a Distinct Market Position',
+  paragraphs: [
+    'Quantum Dynamics Limited is an established engineering and industrial services company, built on more than two decades of hands-on experience in industrial projects. Our founders began in equipment installation, fabrication and erection, and that practical background still shapes how we plan and deliver work today.',
+    'We combine mechanical and civil engineering with equipment manufacturing and installation. Our capabilities cover steel structures, storage tanks, piping networks, industrial erection, welding, insulation, sandblasting and painting, serving the oil and gas, petrochemical, chemical, cement, fertilizer, power generation and infrastructure sectors.',
+    'Every project is executed with a disciplined focus on quality, safety, cost efficiency and timely delivery. Our experienced engineers, technical specialists and skilled workforce are guided by trust, honesty, integrity and professionalism, which is how we earn lasting partnerships with our clients.',
+  ],
+};
+
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'general-contracting',
-    title: 'Mechanical & Civil General Contracting',
-    tagline: 'General contractor for mechanical works, civil works and building construction.',
+    id: 'industrial-maintenance-shutdown',
+    title: 'Industrial Maintenance & Shutdown',
+    tagline: 'Repair, modification and shutdown support for process plants.',
     description:
-      "QD's main business is general contracting for mechanical and civil works. The company has successful experience in building construction, equipment installation and erection, fabrication and welding.",
-    image: IMAGES.siteTeam,
-    capabilities: ['Mechanical works', 'Civil works', 'Building construction', 'Coordination of civil works and equipment configuration'],
-  },
-  {
-    id: 'equipment-manufacturing',
-    title: 'Equipment Manufacturing',
-    tagline: 'Local and on-site manufacturing of large equipment.',
-    description:
-      'QD manufactures plant equipment locally and on site, together with the manufacturing and installation of construction materials, supported by modern tools and equipment.',
-    image: IMAGES.welding,
+      'Planned and emergency maintenance, repair and modification of process plant equipment, including pressure vessels, storage tanks, heat exchangers, air coolers, columns, pipelines, flares and stacks, carried out during plant shutdowns.',
+    image: IMAGES.industrialMaintenance,
     capabilities: [
-      'Equipment manufacturing',
-      'Local manufacturing of large equipment',
-      'On-site manufacturing',
-      'Manufacturing and installation of construction materials',
+      'Pressure Vessel Repair/Modification (Internals & Nozzles)',
+      'Storage Tank Repair/Modification (API 653)',
+      'Heat Exchanger Maintenance & Repair',
+      'Air Cooler Cleaning, Nozzle Replacement & Tube Repairs',
+      'Columns Tray Support Ring & Floor Replacement, Modifications',
+      'Pipeline Construction, Repair & Modification',
+      'Flare & Stack Maintenance and Repairs',
     ],
   },
   {
-    id: 'installation-erection',
-    title: 'Equipment Installation & Erection',
-    tagline: 'Installation and erection of plant equipment, turbines, generators and cranes.',
+    id: 'fabrication-erection',
+    title: 'Fabrication & Erection',
+    tagline: 'Pipelines, process piping and tailored fabrication solutions.',
     description:
-      'QD engineers have extensive experience in equipment installation and erection across many projects, including gas turbines, diesel power generators, pumps, chillers, cooling towers and air handling units.',
-    image: IMAGES.towerCranes,
+      'We offer comprehensive industrial fabrication and erection works for various construction needs, including pipelines, and process piping (metallic/non-metallic). Our expertise allows us to deliver high-quality, innovative, and tailored solutions.',
+    image: IMAGES.fabricationErection,
     capabilities: [
-      'Equipment installation and erection',
-      'Gas turbine installation (175 MW)',
-      'Turbines, diesel power generators and generators',
-      'Pumps, chillers, cooling towers and air handling units',
-      'Trackless cranes',
-      'Fire-fighting systems',
-    ],
-  },
-  {
-    id: 'steel-structures-tanks',
-    title: 'Steel Structures & Storage Tanks',
-    tagline: 'Fabrication and erection of steel structures, pipe racks and storage tanks.',
-    description:
-      'Fabrication and erection of MS and oil storage tanks, pipe rack structures and heavy steel structures — including 62 m diameter floating-roof crude oil tanks and a 750 ton pre-heater steel structure.',
-    image: IMAGES.steelFabrication,
-    capabilities: [
-      'MS storage tanks and oil storage tanks',
-      'Crude oil storage tanks (floating-roof, 62 m diameter, 06 Nos.)',
-      'Pipe rack structures',
-      'Pre-heater steel structure (750 ton, 263 ft height)',
-      'Storage shed (135 m long × 52 m wide)',
-      'Steel rib / arch structures',
-    ],
-  },
-  {
-    id: 'piping-pipelines',
-    title: 'Piping Networks & Pipelines',
-    tagline: 'Process, utility and nitrogen plant piping, and cross-country pipelines.',
-    description:
-      'Erection of piping networks across process plants, including process piping, nitrogen plant piping and utility piping, as well as cross-country pipelines and wastewater treatment plant piping.',
-    image: IMAGES.processPiping,
-    capabilities: [
-      'Process piping',
-      'Nitrogen plant piping',
-      'Utility piping',
-      'Cross-country pipelines',
-      'Wastewater treatment plant',
-      'Cooling water storage tanks (08 Nos.)',
-    ],
-  },
-  {
-    id: 'testing-commissioning',
-    title: 'Testing, Commissioning & Shutdowns',
-    tagline: 'Hydro-testing, commissioning, shutdowns, insulation, sandblasting and painting.',
-    description:
-      'QD engineers also have experience in hydro-testing, pre-commissioning and commissioning activities, plant shutdowns, dismantling and insulation, along with sandblasting and painting.',
-    image: IMAGES.scaffoldCrew,
-    capabilities: [
-      'Hydro-testing',
-      'Pre-commissioning and commissioning',
-      'Shutdowns and dismantling',
-      'Insulation',
-      'Sandblasting and painting',
-      'Scaffolding',
+      'Pipeline fabrication and erection',
+      'Process piping (metallic)',
+      'Process piping (non-metallic)',
+      'Tailored, high-quality fabrication solutions',
     ],
   },
 ];

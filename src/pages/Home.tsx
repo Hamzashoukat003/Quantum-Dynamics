@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageId } from '../types';
-import { COMPANY_INFO, EXPERIENCE, IMAGES, INDUSTRIES, INTRO, SAFETY, SECTOR_LABELS, SERVICES, TECHNICAL_SPECS } from '../data/companyData';
+import { BRIEF_INTRO, COMPANY_INFO, EXPERIENCE, IMAGES, INDUSTRIES, INTRO, SAFETY, SECTOR_LABELS, SERVICES, TECHNICAL_SPECS } from '../data/companyData';
 import {
   ArrowRight,
   ShieldCheck,
@@ -139,11 +139,15 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenRfq, onOpenProfile
           <div className="lg:col-span-7 space-y-4">
             <span className="text-xs font-bold text-qdred-600 uppercase tracking-wider">Brief Introduction</span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-qdblue-900 font-heading tracking-tight">
-              A Construction Company with a Distinct Position in the Market
+              {BRIEF_INTRO.heading}
             </h2>
-            <p className="text-sm text-slate-600 leading-relaxed">{INTRO.ambition}</p>
-            <p className="text-sm text-slate-600 leading-relaxed">{INTRO.founders}</p>
-            <p className="text-sm text-slate-600 leading-relaxed">{INTRO.blessing}</p>
+            <div className="space-y-2">
+              {BRIEF_INTRO.paragraphs.map((p) => (
+                <p key={p} className="text-sm text-slate-600 leading-relaxed">
+                  {p}
+                </p>
+              ))}
+            </div>
             <button
               onClick={() => go('about')}
               className="text-xs font-semibold text-qdblue-900 hover:text-qdred-600 transition-colors flex items-center gap-1.5"
