@@ -89,10 +89,10 @@ export const Header: React.FC<HeaderProps> = ({
             <Logo className="h-10 w-auto" />
             <div>
               <div className="text-lg font-extrabold tracking-tight text-qdblue-900 font-heading leading-tight whitespace-nowrap shrink-0 group-hover:text-qdred-600 transition-colors">
-                QUANTUM DYNAMICS
+                QUANTUM DYNAMICS LIMITED
               </div>
-              <div className="text-[10px] uppercase font-semibold text-slate-500 tracking-wider whitespace-nowrap">
-                Limited · Engineering the Future
+              <div className="text-right text-[10px] uppercase font-semibold text-slate-500 tracking-wider whitespace-nowrap">
+                Engineering the Future
               </div>
             </div>
           </div>
