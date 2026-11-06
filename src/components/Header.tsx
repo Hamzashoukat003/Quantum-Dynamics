@@ -3,14 +3,8 @@ import { PageId } from '../types';
 import { COMPANY_INFO, telHref } from '../data/companyData';
 import { Logo } from './Logo';
 import { HighlightsTicker } from './HighlightsTicker';
-import { Phone, Mail, BookOpen, Menu, X, ArrowRight, ShieldCheck, ChevronRight, Globe, type LucideIcon } from 'lucide-react';
-
-// Top-bar icon in a glowing round badge; the delay staggers the glow so it travels along the bar.
-const IconBadge: React.FC<{ icon: LucideIcon; delay?: number }> = ({ icon: Icon, delay = 0 }) => (
-  <span className="qd-icon-badge" style={{ animationDelay: `${delay}s` }}>
-    <Icon />
-  </span>
-);
+import { IconBadge } from './IconBadge';
+import { Phone, Mail, BookOpen, Menu, X, ArrowRight, ShieldCheck, ChevronRight, Globe } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: PageId;

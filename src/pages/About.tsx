@@ -9,9 +9,8 @@ import {
   REGISTRATION,
   STATEMENTS,
   VALUES,
-  telHref,
 } from '../data/companyData';
-import { Compass, Target, Heart, FileDown, Phone, Mail, BadgeCheck } from 'lucide-react';
+import { Compass, Target, Heart, FileDown, Mail, BadgeCheck } from 'lucide-react';
 
 interface AboutProps {
   onNavigate: (page: PageId) => void;
@@ -32,7 +31,7 @@ export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
       <section className="bg-qdblue-950 text-white py-14 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-bold text-qdred-300 uppercase tracking-widest bg-qdred-600/10 px-3 py-1 rounded border border-qdred-500/30">
+            <span className="inline-block text-xs font-bold text-qdred-300 uppercase tracking-widest bg-qdred-600/10 px-3 py-1 rounded border border-qdred-500/30">
               Executive Information
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-heading">
@@ -222,9 +221,6 @@ export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
                   <h3 className="text-base font-bold text-qdblue-900 font-heading">{leader.name}</h3>
                   <p className="text-xs font-semibold text-qdred-600">{leader.role}</p>
                   <div className="text-xs text-slate-600 flex flex-wrap gap-x-4 gap-y-1 pt-1">
-                    <a href={telHref(leader.phone)} className="flex items-center gap-1 hover:text-qdred-600">
-                      <Phone className="w-3.5 h-3.5" /> {leader.phone}
-                    </a>
                     <a href={`mailto:${leader.email}`} className="flex items-center gap-1 hover:text-qdred-600">
                       <Mail className="w-3.5 h-3.5" /> {leader.email}
                     </a>

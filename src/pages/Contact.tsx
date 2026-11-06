@@ -38,7 +38,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenProfile }) => {
       <section className="bg-qdblue-950 text-white py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-bold text-qdred-300 uppercase tracking-widest bg-qdred-600/10 px-3 py-1 rounded border border-qdred-500/30">
+            <span className="inline-block text-xs font-bold text-qdred-300 uppercase tracking-widest bg-qdred-600/10 px-3 py-1 rounded border border-qdred-500/30">
               Get in Touch
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-heading">Contact Quantum Dynamics Limited</h1>
@@ -127,9 +127,6 @@ export const Contact: React.FC<ContactProps> = ({ onOpenProfile }) => {
                   <div className="space-y-0.5">
                     <div className="font-bold text-white text-sm">{leader.name}</div>
                     <div className="text-qdblue-200">{leader.role}</div>
-                    <a href={telHref(leader.phone)} className="block font-mono text-white hover:text-qdred-300">
-                      {leader.phone}
-                    </a>
                     <a href={`mailto:${leader.email}`} className="block text-white hover:text-qdred-300">
                       {leader.email}
                     </a>

@@ -38,6 +38,5 @@ export interface TechnicalSpec {
 export interface LeadershipMember {
   name: string;
   role: string;
-  phone: string;
   email: string;
 }

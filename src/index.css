@@ -203,6 +203,16 @@ html {
   height: 11px;
 }
 
+.qd-icon-badge--lg {
+  width: 28px;
+  height: 28px;
+}
+
+.qd-icon-badge--lg svg {
+  width: 14px;
+  height: 14px;
+}
+
 .qd-icon-link:hover .qd-icon-badge {
   transform: scale(1.15) rotate(-8deg);
 }

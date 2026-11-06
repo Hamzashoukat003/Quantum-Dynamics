@@ -1,8 +1,9 @@
 import React from 'react';
 import { PageId } from '../types';
-import { COMPANY_INFO, INDUSTRIES, REGISTRATION, SERVICES, telHref } from '../data/companyData';
+import { COMPANY_INFO, INDUSTRIES, REGISTRATION, SERVICES } from '../data/companyData';
 import { Logo } from './Logo';
-import { Phone, Mail, MapPin, FileDown, ArrowUpRight, Globe } from 'lucide-react';
+import { IconBadge } from './IconBadge';
+import { Mail, MapPin, FileDown, ArrowUpRight, Globe } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
@@ -123,30 +124,36 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenRfq, onOpenPro
               Main Office
             </h4>
             <div className="space-y-3 text-xs text-qdblue-200">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-qdred-400 shrink-0 mt-0.5" />
+              <div className="qd-icon-link flex items-center gap-3">
+                <IconBadge icon={MapPin} size="lg" />
                 <p>{COMPANY_INFO.address}</p>
               </div>
-              {COMPANY_INFO.phones.map((p) => (
-                <div key={p.label} className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-qdred-400 shrink-0" />
-                  <span>
-                    <span className="text-qdblue-300">{p.label}: </span>
-                    <a href={telHref(p.tel)} className="text-white hover:text-qdred-300 font-mono">
-                      {p.tel}
+              {COMPANY_INFO.emails.map((e, i) => (
+                <div key={e.label} className="qd-icon-link flex items-center gap-3">
+                  <IconBadge icon={Mail} size="lg" delay={0.4 * (i + 1)} />
+                  <span className="min-w-0 break-words">
+                    <span className="text-qdblue-300">{e.label}: </span>
+                    <a href={`mailto:${e.email}`} className="text-white hover:text-qdred-300">
+                      {e.email}
                     </a>
                   </span>
                 </div>
               ))}
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-qdred-400 shrink-0" />
-                <a href={`mailto:${COMPANY_INFO.emailGeneral}`} className="text-white hover:text-qdred-300">
-                  {COMPANY_INFO.emailGeneral}
-                </a>
+              <div className="qd-icon-link flex items-center gap-3">
+                <IconBadge icon={Mail} size="lg" delay={0.8} />
+                <span>
+                  <span className="text-qdblue-300">General Enquiries: </span>
+                  <a href={`mailto:${COMPANY_INFO.emailGeneral}`} className="text-white hover:text-qdred-300">
+                    {COMPANY_INFO.emailGeneral}
+                  </a>
+                </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-qdred-400 shrink-0" />
-                <span className="text-white">{COMPANY_INFO.domain}</span>
+              <div className="qd-icon-link flex items-center gap-3">
+                <IconBadge icon={Globe} size="lg" delay={1.2} />
+                <span>
+                  <span className="text-qdblue-300">Website: </span>
+                  <span className="text-white">{COMPANY_INFO.domain}</span>
+                </span>
               </div>
             </div>
           </div>
