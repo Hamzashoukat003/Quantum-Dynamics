@@ -239,10 +239,10 @@ export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
               {REGISTRATION.map((r) => (
                 <div key={r.label} className="py-2.5 flex items-center justify-between gap-4">
                   <dt className="text-qdblue-200 flex items-center gap-2">
-                    <BadgeCheck className="w-4 h-4 text-qdred-400" />
+                    <BadgeCheck className="w-4 h-4 text-qdred-400 shrink-0" />
                     {r.label}
                   </dt>
-                  <dd className="font-mono font-semibold text-white text-right">{r.value}</dd>
+                  <dd className={`font-mono font-semibold text-white text-right ${r.value.includes(' ') ? '' : 'whitespace-nowrap'}`}>{r.value}</dd>
                 </div>
               ))}
             </dl>

@@ -70,7 +70,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenRfq, onOpenProfile }) 
                 placeholder="Search by client, project or location..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-1.5 text-xs border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-qdred-600"
+                className="w-full pl-9 pr-3 py-1.5 text-base sm:text-xs border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-qdred-600"
               />
             </div>
           </div>

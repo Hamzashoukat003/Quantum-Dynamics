@@ -83,25 +83,25 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="h-0.5 qd-brand-rule" />
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3 sm:gap-6 xl:gap-8">
         <button
           onClick={() => handleNavClick('home')}
-          className="text-left group cursor-pointer focus-visible:outline-2 focus-visible:outline-qdred-600 rounded"
+          className="min-w-0 text-left group cursor-pointer focus-visible:outline-2 focus-visible:outline-qdred-600 rounded"
         >
           <div className="flex items-center gap-3">
-            <Logo className="h-10 w-auto" />
+            <Logo className="h-9 sm:h-10 w-auto shrink-0" />
             <div>
-              <div className="text-lg font-extrabold tracking-tight text-qdblue-900 font-heading leading-tight whitespace-nowrap shrink-0 group-hover:text-qdred-600 transition-colors">
+              <div className="text-sm sm:text-lg font-extrabold tracking-tight text-qdblue-900 font-heading leading-tight whitespace-nowrap shrink-0 group-hover:text-qdred-600 transition-colors">
                 QUANTUM DYNAMICS LIMITED
               </div>
-              <div className="text-right text-[10px] uppercase font-semibold text-slate-500 tracking-wider whitespace-nowrap">
+              <div className="text-right text-[9px] sm:text-[10px] uppercase font-semibold text-slate-500 tracking-wider whitespace-nowrap">
                 Engineering the Future
               </div>
             </div>
           </div>
         </button>
 
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
+        <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-700">
           {navLinks.map((link) => {
             const isActive = currentPage === link.id;
             return (
@@ -120,7 +120,7 @@ export const Header: React.FC<HeaderProps> = ({
           })}
         </nav>
 
-        <div className="hidden sm:flex items-center gap-3 shrink-0">
+        <div className="hidden sm:flex items-center gap-3 shrink-0 ml-auto xl:ml-0">
           <button
             onClick={onOpenRfq}
             className="px-4 py-2 text-xs font-semibold text-white bg-qdred-600 rounded-md hover:bg-qdred-700 transition-all flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
@@ -131,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 shrink-0 xl:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-slate-700 hover:text-qdblue-900 hover:bg-slate-100 rounded-md transition-colors"
@@ -144,7 +144,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-150">
+        <div className="xl:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-150">
           <div className="flex flex-col gap-1 pb-4 border-b border-slate-100">
             {navLinks.map((link) => {
               const isActive = currentPage === link.id;

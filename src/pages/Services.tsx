@@ -61,9 +61,9 @@ export const Services: React.FC<ServicesProps> = ({ onOpenRfq }) => {
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-qdblue-950/80 via-qdblue-950/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-qdblue-950/90 via-qdblue-950/55 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-qdred-300 text-xs font-semibold uppercase tracking-wider">{activeService.tagline}</span>
+                <span className="block text-qdred-300 text-xs font-semibold uppercase tracking-wider">{activeService.tagline}</span>
                 <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">{activeService.title}</h3>
               </div>
             </div>

@@ -30,7 +30,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenProfile }) => {
   };
 
   const inputClass =
-    'w-full text-xs px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-qdred-600 focus:border-qdred-600';
+    'w-full text-base sm:text-xs px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-qdred-600 focus:border-qdred-600';
 
   return (
     <div className="space-y-16 pb-16">
@@ -238,13 +238,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenProfile }) => {
                   />
                 </div>
 
-                <div className="pt-2 flex items-center justify-between gap-4">
-                  <span className="text-[11px] text-slate-400">
+                <div className="pt-2 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                  <span className="text-[11px] text-slate-500">
                     Opens your email app addressed to {COMPANY_INFO.emailGeneral}. You can attach drawings or BOQs there.
                   </span>
                   <button
                     type="submit"
-                    className="px-6 py-2.5 text-xs font-semibold text-white bg-qdred-600 hover:bg-qdred-700 rounded-md transition-colors flex items-center gap-1.5 shadow-xs shrink-0"
+                    className="px-6 py-2.5 text-xs font-semibold text-white bg-qdred-600 hover:bg-qdred-700 rounded-md transition-colors flex items-center justify-center gap-1.5 shadow-xs shrink-0"
                   >
                     Send Enquiry
                     <Send className="w-3.5 h-3.5" />

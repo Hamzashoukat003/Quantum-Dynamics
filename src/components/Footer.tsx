@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenRfq, onOpenPro
           {/* Col 1: Corporate Profile */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="bg-white rounded-md p-1.5">
+              <div className="bg-white rounded-md p-1.5 shrink-0">
                 <Logo className="h-8 w-auto" />
               </div>
               <div>
