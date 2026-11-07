@@ -230,7 +230,7 @@ export const About: React.FC<AboutProps> = ({ onOpenRfq, onOpenProfile }) => {
             ))}
           </div>
 
-          <div className="bg-qdblue-900 text-white rounded-xl p-8 space-y-5">
+          <div className="bg-qdblue-900 text-white rounded-xl p-8 space-y-5 lg:self-center">
             <div>
               <span className="text-xs font-bold text-qdred-300 uppercase tracking-widest">General Information</span>
               <h2 className="text-2xl font-extrabold font-heading text-white mt-1">Company Credentials</h2>
