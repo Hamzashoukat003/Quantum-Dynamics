@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { COMPANY_INFO, PROFILE_BOOK, PROFILE_PDF } from '../data/companyData';
 import { Logo } from './Logo';
 import { X, FileDown, ExternalLink, Loader2 } from 'lucide-react';
@@ -12,6 +12,20 @@ interface CompanyProfileModalProps {
 // Shows the interactive flipbook company profile (page turns, zoom, thumbnails, search) in a near full-screen window.
 export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({ isOpen, onClose, onOpenRfq }) => {
   const [loaded, setLoaded] = useState(false);
+  const frame = useRef<HTMLIFrameElement>(null);
+
+  // Hand keyboard focus to the flipbook so arrow keys turn its pages, and keep Esc closing the window from inside it.
+  const handleLoad = () => {
+    setLoaded(true);
+    const win = frame.current?.contentWindow;
+    if (!win) return;
+    win.focus();
+    try {
+      win.addEventListener('keydown', (e) => e.key === 'Escape' && onClose());
+    } catch {
+      /* cross-origin frame: Esc works once focus returns to the page */
+    }
+  };
 
   useEffect(() => {
     if (!isOpen) {
@@ -88,7 +102,8 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({ isOpen
           <iframe
             src={PROFILE_BOOK}
             title="QD Company Profile"
-            onLoad={() => setLoaded(true)}
+            ref={frame}
+            onLoad={handleLoad}
             allow="fullscreen"
             allowFullScreen
             className={`w-full h-full border-0 transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}

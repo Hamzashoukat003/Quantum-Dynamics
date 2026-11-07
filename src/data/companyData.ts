@@ -39,6 +39,7 @@ export const COMPANY_INFO = {
   domain: 'www.qdl.com.pk',
   address: 'Shakir Kot, Airport Road, Sadiqabad, Rahimyarkhan',
   emailGeneral: 'info@qdl.com.pk',
+  emailFinance: 'finance@qdl.com.pk',
   phonePrimary: '0300-8671833',
   phones: [
     { label: 'CEO', tel: '0300-8671833' },
@@ -80,7 +81,7 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
   { name: 'Kaiwan Danish', role: 'Chief Executive Officer', email: 'kaiwandanish@qdl.com.pk' },
   { name: 'Shafiq Aslam', role: 'Director of Finance', email: 'shafiq.aslam@qdl.com.pk' },
   { name: 'Awais Ali', role: 'Director of Tech/Operations', email: 'Awaisali@qdl.com.pk' },
-  { name: 'Aqib Anwar', role: 'Account Manager', email: 'aqibanwar@qdl.com.pk'},
+  { name: 'M Aqib Anwar', role: 'Manager Accounts & Finance / Company Secretary', email: 'aqibanwar@qdl.com.pk' },
 ];
 
 export const IMAGES = {

@@ -149,7 +149,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenRfq, onOpenPro
                 </span>
               </div>
               <div className="qd-icon-link flex items-center gap-3">
-                <IconBadge icon={Globe} size="lg" delay={1.2} />
+                <IconBadge icon={Mail} size="lg" delay={1.2} />
+                <span>
+                  <span className="text-qdblue-300">Finance: </span>
+                  <a href={`mailto:${COMPANY_INFO.emailFinance}`} className="text-white hover:text-qdred-300">
+                    {COMPANY_INFO.emailFinance}
+                  </a>
+                </span>
+              </div>
+              <div className="qd-icon-link flex items-center gap-3">
+                <IconBadge icon={Globe} size="lg" delay={1.6} />
                 <span>
                   <span className="text-qdblue-300">Website: </span>
                   <span className="text-white">{COMPANY_INFO.domain}</span>

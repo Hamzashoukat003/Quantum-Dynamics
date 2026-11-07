@@ -90,9 +90,18 @@ export const Contact: React.FC<ContactProps> = ({ onOpenProfile }) => {
                   </div>
                   <div>
                     <strong className="text-qdblue-900 block">Email</strong>
-                    <a href={`mailto:${COMPANY_INFO.emailGeneral}`} className="text-qdred-600 hover:text-qdred-700 font-medium">
-                      {COMPANY_INFO.emailGeneral}
-                    </a>
+                    <div>
+                      <span className="text-slate-500">General: </span>
+                      <a href={`mailto:${COMPANY_INFO.emailGeneral}`} className="text-qdred-600 hover:text-qdred-700 font-medium">
+                        {COMPANY_INFO.emailGeneral}
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-slate-500">Finance: </span>
+                      <a href={`mailto:${COMPANY_INFO.emailFinance}`} className="text-qdred-600 hover:text-qdred-700 font-medium">
+                        {COMPANY_INFO.emailFinance}
+                      </a>
+                    </div>
                   </div>
                 </div>
 
