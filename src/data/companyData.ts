@@ -80,7 +80,7 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
   { name: 'Kaiwan Danish', role: 'Chief Executive Officer', email: 'kaiwandanish@qdl.com.pk' },
   { name: 'Shafiq Aslam', role: 'Director of Finance', email: 'shafiq.aslam@qdl.com.pk' },
   { name: 'Awais Ali', role: 'Director of Tech/Operations', email: 'Awaisali@qdl.com.pk' },
-  { name: 'Aqib Ali', role: 'Account Manager', email: 'aqibanwar@qdl.com.pk'},
+  { name: 'Aqib Anwar', role: 'Account Manager', email: 'aqibanwar@qdl.com.pk'},
 ];
 
 export const IMAGES = {
